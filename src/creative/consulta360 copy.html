@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "Starter Page"}) @@include('./partials/head-css.html')
+
+</head>
+
+<body class="loading" data-layout="topnav" data-layout-config='{"layoutBoxed":false,"darkMode":false,"showRightSidebarOnStart": true}'>
+    <!-- Begin page -->
+    <div class="wrapper">
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+                @@include('./partials/horizontal-nav.html')
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
+                                        <li class="breadcrumb-item active">Consulta-360</li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">Consulta360</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                </div>
+                <!-- container -->
+                <div class="container-fluid">
+                    <div class="content-page">
+                        <div class="content">
+
+
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <form id="consultForm">
+                                        <div class="row">
+                                            <input id="tipSol" value="CO" hidden></input>
+                                            <select id="selectId" class="form-select select2" data-toggle="select2">
+                                                <option>---Seleccione un metodo de busueda---</option>
+                                                <optgroup label="Tipo de Consultas">   
+                                                    <option value="10 ">Nombre</option>
+                                                    <option value="08 ">Tarjeta</option>
+                                                </optgroup>
+                                                    <option value="07 ">Cedula</option>
+                                                </select>
+                                            <div class="col ">
+                                                <input required type="text " class="form-control " id="identId " placeholder="CIF " autocomplete="off ">
+                                                <button type="submit " class="btn btn-outline-primary rounded-pill "> <i class="dripicons-search "></i></button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+
+                                </div>
+                            </div>
+                            <div id="loading "></div>
+
+
+                            <div id="RESPONSE "></div>
+
+                            <div id="RESPONSE1 "></div>
+                            <div id="RESPONSE3 "></div>
+
+                            <div id="RESPONSE4 "></div>
+                            <div id="RESPONSE5 "></div>
+                            <div id="RESPONSE2 "></div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- content -->
+
+            @@include('./partials/footer.html')
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+
+    </div>
+    <!-- END wrapper -->
+
+    <style>
+        /* The container must be positioned relative: */
+        
+        .custom-select {
+            position: relative;
+            font-family: Arial;
+        }
+        
+        .custom-select select {
+            display: none;
+            /*hide original SELECT element: */
+        }
+        
+        .select-selected {
+            background-color: DodgerBlue;
+        }
+        /* Style the arrow inside the select element: */
+        
+        .select-selected:after {
+            position: absolute;
+            content: " ";
+            top: 14px;
+            right: 10px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-color: #fff transparent transparent transparent;
+        }
+        /* Point the arrow upwards when the select box is open (active): */
+        
+        .select-selected.select-arrow-active:after {
+            border-color: transparent transparent #fff transparent;
+            top: 7px;
+        }
+        /* style the items (options), including the selected item: */
+        
+        .select-items div,
+        .select-selected {
+            color: #ffffff;
+            padding: 8px 16px;
+            border: 1px solid transparent;
+            border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+            cursor: pointer;
+        }
+        /* Style items (options): */
+        
+        .select-items {
+            position: absolute;
+            background-color: DodgerBlue;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 99;
+        }
+        /* Hide the items when the select box is closed: */
+        
+        .select-hide {
+            display: none;
+        }
+        
+        .select-items div:hover,
+        .same-as-selected {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        #loading {
+            width: 2rem;
+            height: 2rem;
+            border: 5px solid #f3f3f3;
+            border-top: 6px solid #9c41f2;
+            border-radius: 100%;
+            margin: auto;
+            visibility: hidden;
+            animation: spin 1s infinite linear;
+        }
+        
+        #loading.display {
+            visibility: visible;
+        }
+        
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    @@include('./partials/right-sidebar.html')
+
+    <!-- bundle -->
+
+    <script src="assets/js/pages/cons360.js "></script>
+    <script src="assets/js/app.log.js "></script>
+
+    <script src="assets/js/vendor.min.js "></script>
+    <script src="assets/js/app.min.js "></script>
+
+
+
+</body>
+
+</html>
