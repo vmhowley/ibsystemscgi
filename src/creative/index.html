@@ -1,588 +1,753 @@
 <!DOCTYPE html>
-    <html lang="en">
+<html lang="en">
 
-    <head>
-        @@include("./partials/title-meta.html", {"title": "Hyper"})
+<head>
+    @@include("./partials/title-meta.html", {"title": "Landing Page"}) @@include('./partials/head-css.html')
 
-        <!-- third party css -->
-        <link href="assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
-        <!-- third party css end -->
+</head>
 
-        @@include("./partials/head-css.html")
-        
+<body class="loading" data-layout-config='{"darkMode":false}'>
 
-    </head>
+    <!-- NAVBAR START -->
+    <nav class="bg-white navbar navbar-expand-sm py-sm-2 navbar-light">
+        <div class="container">
 
-    <body class="loading" data-layout="topnav" data-layout-config='{"layoutBoxed":false,"darkMode":false,"showRightSidebarOnStart": true}'>
-        
-        <!-- Begin page -->
-        <div class="wrapper">
+            <!-- logo -->
+            <a href="index.html" class="navbar-brand me-lg-5">
+                <img src="assets/images/logo-light.png" alt="" class="logo-light" height="38s" />
+            </a>
 
-            <!-- ============================================================== -->
-            <!-- Start Page Content here -->
-            <!-- ============================================================== -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu"></i>
+                </button>
 
-            <div class="content-page">
-                <div class="content">
-                    @@include('./partials/horizontal-nav.html')
-                    
-                    <!-- Start Content-->
-                    <div class="container-fluid">
+            <!-- menus -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box">
-                                    <div class="page-title-right">
-                                        <form class="d-flex">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control form-control-light" id="dash-daterange">
-                                                <span class="input-group-text bg-info border-info text-white">
-                                                    <i class="mdi mdi-calendar-range font-13"></i>
-                                                </span>
-                                            </div>
-                                            <a href="javascript: void(0);" class="btn btn-info ms-2">
-                                                <i class="mdi mdi-autorenew"></i>
-                                            </a>
-                                        </form>
-                                    </div>
-                                    <h4 class="page-title">Dashboard</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end page title -->
+                <!-- left menu -->
+                <ul class="navbar-nav me-auto align-items-center">
+                    <li class="nav-item mx-lg-1">
+                        <a class="nav-link active" href="">INICIO</a>
+                    </li>
+                    <li class="nav-item mx-lg-1">
+                        <a class="nav-link" href="#about-us">NOSOTROS</a>
+                    </li>
+                    <li class="nav-item mx-lg-1">
+                        <a class="nav-link" href="#productos">PRODUCTOS</a>
+                    </li>
+                    <li class="nav-item mx-lg-1">
+                        <a class="nav-link" href="#servicios">SERVICIOS</a>
+                    </li>
+                    <li class="nav-item mx-lg-1">
+                        <a class="nav-link" href="#testimonios">TESTIMONIOS</a>
+                    </li>
+                    <li class="nav-item mx-lg-1">
+                        <a class="nav-link" href="#contact">CONTACTO</a>
+                    </li>
+                </ul>
 
-                        <div class="row">
-                            <div class="col-xl-5 col-lg-6">
-
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="card widget-flat">
-                                            <div class="card-body">
-                                                <div class="float-end">
-                                                    <i class="mdi mdi-account-multiple widget-icon bg-success-lighten text-success"></i>
-                                                </div>
-                                                <h5 class="text-muted fw-normal mt-0" title="Number of Customers">Customers</h5>
-                                                <h3 class="mt-3 mb-3">36,254</h3>
-                                                <p class="mb-0 text-muted">
-                                                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>
-                                                    <span class="text-nowrap">Since last month</span>  
-                                                </p>
-                                            </div> <!-- end card-body-->
-                                        </div> <!-- end card-->
-                                    </div> <!-- end col-->
-
-                                    <div class="col-lg-6">
-                                        <div class="card widget-flat">
-                                            <div class="card-body">
-                                                <div class="float-end">
-                                                    <i class="mdi mdi-cart-plus widget-icon bg-danger-lighten text-danger"></i>
-                                                </div>
-                                                <h5 class="text-muted fw-normal mt-0" title="Number of Orders">Orders</h5>
-                                                <h3 class="mt-3 mb-3">5,543</h3>
-                                                <p class="mb-0 text-muted">
-                                                    <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> 1.08%</span>
-                                                    <span class="text-nowrap">Since last month</span>
-                                                </p>
-                                            </div> <!-- end card-body-->
-                                        </div> <!-- end card-->
-                                    </div> <!-- end col-->
-                                </div> <!-- end row -->
-
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="card widget-flat">
-                                            <div class="card-body">
-                                                <div class="float-end">
-                                                    <i class="mdi mdi-currency-usd widget-icon bg-info-lighten text-info"></i>
-                                                </div>
-                                                <h5 class="text-muted fw-normal mt-0" title="Average Revenue">Revenue</h5>
-                                                <h3 class="mt-3 mb-3">$6,254</h3>
-                                                <p class="mb-0 text-muted">
-                                                    <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> 7.00%</span>
-                                                    <span class="text-nowrap">Since last month</span>
-                                                </p>
-                                            </div> <!-- end card-body-->
-                                        </div> <!-- end card-->
-                                    </div> <!-- end col-->
-
-                                    <div class="col-lg-6">
-                                        <div class="card widget-flat">
-                                            <div class="card-body">
-                                                <div class="float-end">
-                                                    <i class="mdi mdi-pulse widget-icon bg-warning-lighten text-warning"></i>
-                                                </div>
-                                                <h5 class="text-muted fw-normal mt-0" title="Growth">Growth</h5>
-                                                <h3 class="mt-3 mb-3">+ 30.56%</h3>
-                                                <p class="mb-0 text-muted">
-                                                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 4.87%</span>
-                                                    <span class="text-nowrap">Since last month</span>
-                                                </p>
-                                            </div> <!-- end card-body-->
-                                        </div> <!-- end card-->
-                                    </div> <!-- end col-->
-                                </div> <!-- end row -->
-
-                            </div> <!-- end col -->
-
-                            <div class="col-xl-7 col-lg-6">
-                                <div class="card card-h-100">
-                                    <div class="card-body">
-                                        <div class="dropdown float-end">
-                                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="mdi mdi-dots-vertical"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Profit</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                                            </div>
-                                        </div>
-                                        <h4 class="header-title mb-3">Projections Vs Actuals</h4>
-
-                                        <div dir="ltr">
-                                            <div id="high-performing-product" class="apex-charts" data-colors="#fa6767,#e3eaef"></div>
-                                        </div>
-                                            
-                                    </div> <!-- end card-body-->
-                                </div> <!-- end card-->
-
-                            </div> <!-- end col -->
-                        </div>
-                        <!-- end row -->
-
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="dropdown float-end">
-                                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="mdi mdi-dots-vertical"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Profit</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                                            </div>
-                                        </div>
-                                        <h4 class="header-title mb-3">Revenue</h4>
-
-                                        <div class="chart-content-bg">
-                                            <div class="row text-center">
-                                                <div class="col-md-6">
-                                                    <p class="text-muted mb-0 mt-3">Current Week</p>
-                                                    <h2 class="fw-normal mb-3">
-                                                        <small class="mdi mdi-checkbox-blank-circle text-primary align-middle me-1"></small>
-                                                        <span>$58,254</span>
-                                                    </h2>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <p class="text-muted mb-0 mt-3">Previous Week</p>
-                                                    <h2 class="fw-normal mb-3">
-                                                        <small class="mdi mdi-checkbox-blank-circle text-success align-middle me-1"></small>
-                                                        <span>$69,524</span>
-                                                    </h2>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="dash-item-overlay d-none d-md-block" dir="ltr">
-                                            <h5>Today's Earning: $2,562.30</h5>
-                                            <p class="text-muted font-13 mb-3 mt-2">Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
-                                                Etiam rhoncus...</p>
-                                            <a href="javascript: void(0);" class="btn btn-outline-primary">View Statements
-                                                <i class="mdi mdi-arrow-right ms-2"></i>
-                                            </a>
-                                        </div>
-
-                                        <div dir="ltr">
-                                            <div id="revenue-chart" class="apex-charts mt-3" data-colors="#3688fc,#f9bc0d"></div>
-                                        </div>
-                                        
-                                    </div> <!-- end card-body-->
-                                </div> <!-- end card-->
-                            </div> <!-- end col-->
-
-                            <div class="col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="dropdown float-end">
-                                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="mdi mdi-dots-vertical"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Profit</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                                            </div>
-                                        </div>
-                                        <h4 class="header-title">Revenue By Location</h4>
-                                        <div class="mb-4 mt-4">
-                                            <div id="world-map-markers" style="height: 224px"></div>
-                                        </div>
-
-                                        <h5 class="mb-1 mt-0 fw-normal">New York</h5>
-                                        <div class="progress-w-percent">
-                                            <span class="progress-value fw-bold">72k </span>
-                                            <div class="progress progress-sm">
-                                                <div class="progress-bar bg-dark" role="progressbar" style="width: 72%;" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-
-                                        <h5 class="mb-1 mt-0 fw-normal">San Francisco</h5>
-                                        <div class="progress-w-percent">
-                                            <span class="progress-value fw-bold">39k </span>
-                                            <div class="progress progress-sm">
-                                                <div class="progress-bar bg-warning" role="progressbar" style="width: 39%;" aria-valuenow="39" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-
-                                        <h5 class="mb-1 mt-0 fw-normal">Sydney</h5>
-                                        <div class="progress-w-percent">
-                                            <span class="progress-value fw-bold">25k </span>
-                                            <div class="progress progress-sm">
-                                                <div class="progress-bar bg-info" role="progressbar" style="width: 39%;" aria-valuenow="39" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-
-                                        <h5 class="mb-1 mt-0 fw-normal">Singapore</h5>
-                                        <div class="progress-w-percent mb-0">
-                                            <span class="progress-value fw-bold">61k </span>
-                                            <div class="progress progress-sm">
-                                                <div class="progress-bar bg-success" role="progressbar" style="width: 61%;" aria-valuenow="61" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end card-body-->
-                                </div> <!-- end card-->
-                            </div> <!-- end col-->
-                        </div>
-                        <!-- end row -->
-
-
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-12 order-lg-2 order-xl-1">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <a href="" class="btn btn-sm btn-link float-end">Export
-                                            <i class="mdi mdi-download ms-1"></i>
-                                        </a>
-                                        <h4 class="header-title mt-2 mb-3">Top Selling Products</h4>
-
-                                        <div class="table-responsive">
-                                            <table class="table table-centered table-nowrap table-hover mb-0">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">ASOS Ridley High Waist</h5>
-                                                            <span class="text-muted font-13">07 April 2018</span>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">$79.49</h5>
-                                                            <span class="text-muted font-13">Price</span>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">82</h5>
-                                                            <span class="text-muted font-13">Quantity</span>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">$6,518.18</h5>
-                                                            <span class="text-muted font-13">Amount</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">Marco Lightweight Shirt</h5>
-                                                            <span class="text-muted font-13">25 March 2018</span>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">$128.50</h5>
-                                                            <span class="text-muted font-13">Price</span>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">37</h5>
-                                                            <span class="text-muted font-13">Quantity</span>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">$4,754.50</h5>
-                                                            <span class="text-muted font-13">Amount</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">Half Sleeve Shirt</h5>
-                                                            <span class="text-muted font-13">17 March 2018</span>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">$39.99</h5>
-                                                            <span class="text-muted font-13">Price</span>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">64</h5>
-                                                            <span class="text-muted font-13">Quantity</span>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">$2,559.36</h5>
-                                                            <span class="text-muted font-13">Amount</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">Lightweight Jacket</h5>
-                                                            <span class="text-muted font-13">12 March 2018</span>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">$20.00</h5>
-                                                            <span class="text-muted font-13">Price</span>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">184</h5>
-                                                            <span class="text-muted font-13">Quantity</span>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">$3,680.00</h5>
-                                                            <span class="text-muted font-13">Amount</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">Marco Shoes</h5>
-                                                            <span class="text-muted font-13">05 March 2018</span>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">$28.49</h5>
-                                                            <span class="text-muted font-13">Price</span>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">69</h5>
-                                                            <span class="text-muted font-13">Quantity</span>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-14 my-1 fw-normal">$1,965.81</h5>
-                                                            <span class="text-muted font-13">Amount</span>
-                                                        </td>
-                                                    </tr>
-
-                                                </tbody>
-                                            </table>
-                                        </div> <!-- end table-responsive-->
-                                    </div> <!-- end card-body-->
-                                </div> <!-- end card-->
-                            </div> <!-- end col-->
-
-                            <div class="col-xl-3 col-lg-6 order-lg-1">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="dropdown float-end">
-                                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="mdi mdi-dots-vertical"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Profit</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                                            </div>
-                                        </div>
-                                        <h4 class="header-title">Total Sales</h4>
-
-                                        <div id="average-sales" class="apex-charts mb-4 mt-4"
-                                            data-colors="#3688fc,#6c757d,#42d29d,#fa6767"></div>
-                                       
-
-                                        <div class="chart-widget-list">
-                                            <p>
-                                                <i class="mdi mdi-square text-primary"></i> Direct
-                                                <span class="float-end">$300.56</span>
-                                            </p>
-                                            <p>
-                                                <i class="mdi mdi-square text-dark"></i> Affilliate
-                                                <span class="float-end">$135.18</span>
-                                            </p>
-                                            <p>
-                                                <i class="mdi mdi-square text-success"></i> Sponsored
-                                                <span class="float-end">$48.96</span>
-                                            </p>
-                                            <p class="mb-0">
-                                                <i class="mdi mdi-square text-danger"></i> E-mail
-                                                <span class="float-end">$154.02</span>
-                                            </p>
-                                        </div>
-                                    </div> <!-- end card-body-->
-                                </div> <!-- end card-->
-                            </div> <!-- end col-->
-
-                            <div class="col-xl-3 col-lg-6 order-lg-1">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="dropdown float-end">
-                                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="mdi mdi-dots-vertical"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Profit</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                                            </div>
-                                        </div>
-                                        <h4 class="header-title mb-2">Recent Activity</h4>
-
-                                        <div data-simplebar style="max-height: 419px;"> 
-                                            <div class="timeline-alt pb-0">
-                                                <div class="timeline-item">
-                                                    <i class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
-                                                    <div class="timeline-item-info">
-                                                        <a href="#" class="text-info fw-bold mb-1 d-block">You sold an item</a>
-                                                        <small>Paul Burgess just purchased “Hyper - Admin Dashboard”!</small>
-                                                        <p class="mb-0 pb-2">
-                                                            <small class="text-muted">5 minutes ago</small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="timeline-item">
-                                                    <i class="mdi mdi-airplane bg-primary-lighten text-primary timeline-icon"></i>
-                                                    <div class="timeline-item-info">
-                                                        <a href="#" class="text-primary fw-bold mb-1 d-block">Product on the Bootstrap Market</a>
-                                                        <small>Dave Gamache added
-                                                            <span class="fw-bold">Admin Dashboard</span>
-                                                        </small>
-                                                        <p class="mb-0 pb-2">
-                                                            <small class="text-muted">30 minutes ago</small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="timeline-item">
-                                                    <i class="mdi mdi-microphone bg-info-lighten text-info timeline-icon"></i>
-                                                    <div class="timeline-item-info">
-                                                        <a href="#" class="text-info fw-bold mb-1 d-block">Robert Delaney</a>
-                                                        <small>Send you message
-                                                            <span class="fw-bold">"Are you there?"</span>
-                                                        </small>
-                                                        <p class="mb-0 pb-2">
-                                                            <small class="text-muted">2 hours ago</small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="timeline-item">
-                                                    <i class="mdi mdi-upload bg-primary-lighten text-primary timeline-icon"></i>
-                                                    <div class="timeline-item-info">
-                                                        <a href="#" class="text-primary fw-bold mb-1 d-block">Audrey Tobey</a>
-                                                        <small>Uploaded a photo
-                                                            <span class="fw-bold">"Error.jpg"</span>
-                                                        </small>
-                                                        <p class="mb-0 pb-2">
-                                                            <small class="text-muted">14 hours ago</small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="timeline-item">
-                                                    <i class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
-                                                    <div class="timeline-item-info">
-                                                        <a href="#" class="text-info fw-bold mb-1 d-block">You sold an item</a>
-                                                        <small>Paul Burgess just purchased “Hyper - Admin Dashboard”!</small>
-                                                        <p class="mb-0 pb-2">
-                                                            <small class="text-muted">16 hours ago</small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="timeline-item">
-                                                    <i class="mdi mdi-airplane bg-primary-lighten text-primary timeline-icon"></i>
-                                                    <div class="timeline-item-info">
-                                                        <a href="#" class="text-primary fw-bold mb-1 d-block">Product on the Bootstrap Market</a>
-                                                        <small>Dave Gamache added
-                                                            <span class="fw-bold">Admin Dashboard</span>
-                                                        </small>
-                                                        <p class="mb-0 pb-2">
-                                                            <small class="text-muted">22 hours ago</small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="timeline-item">
-                                                    <i class="mdi mdi-microphone bg-info-lighten text-info timeline-icon"></i>
-                                                    <div class="timeline-item-info">
-                                                        <a href="#" class="text-info fw-bold mb-1 d-block">Robert Delaney</a>
-                                                        <small>Send you message
-                                                            <span class="fw-bold">"Are you there?"</span>
-                                                        </small>
-                                                        <p class="mb-0 pb-2">
-                                                            <small class="text-muted">2 days ago</small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- end timeline -->
-                                        </div> <!-- end slimscroll -->
-                                    </div>
-                                    <!-- end card-body -->
-                                </div>
-                                <!-- end card-->
-                            </div>
-                            <!-- end col -->
-
-                        </div>
-                        <!-- end row -->
-
-                    </div>
-                    <!-- container -->
-
-                </div>
-                <!-- content -->
-
-                @@include('./partials/footer.html')
+                <!-- right menu -->
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item me-0">
+                        <a href="/creative/pages-login-2" class="nav-link d-lg-none hover">Login now</a>
+                        <a href="/creative/pages-login-2.html" class="btn btn-sm btn-dark rounded-pill d-none d-lg-inline-flex ">
+                            <i class="mdi mdi-login me-2 "></i> Login Now
+                        </a>
+                    </li>
+                </ul>
 
             </div>
+        </div>
+    </nav>
+    <!-- NAVBAR END -->
 
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
+    <!-- START HERO -->
+    <section class="hero-section bg-light-lighten">
+        <div class="container ">
+            <div class="row align-items-center ">
+                <div class="col-md-5 ">
+                    <div class="mt-md-4 ">
+                        <div>
+                            <span class="badge bg-danger rounded-pill ">Nuevo</span>
+                            <span class="text-white-50 ms-1 ">Bienvenido al nuevo sitio web de IBSYSTEMS.SRL</span>
+                        </div>
+                        <h2 class="text-white fw-normal mb-4 mt-3 hero-title ">
+                            Sistemas inteligentes de negocio
+                        </h2>
 
+                        <p class="mb-4 font-16 text-white-50 ">IB SYSTEMS, SRL, es una compañía dominicana dedicada a proveer soluciones tecnológicas por medio de la implantación de sistemas, del servicio de análisis, diseño y programación de aplicaciones de negocios, de la exportación, importación
+                            y representación de sistemas y de equipos informáticos de la más alta calidad, así como de la capacitación que aseguran el mejor funcionamiento de los mismos.</p>
+
+                        <a href="#about-us" class="btn btn-success ">Ver más <i class="mdi mdi-arrow-right ms-1 "></i></a>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-2 ">
+                    <div class="text-md-end mt-3 mt-md-0 ">
+                        <img src="assets/images/startup.svg " alt=" " class="img-fluid " />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END HERO -->
+
+    <!-- ABOUT US -->
+    <section id="about-us" class="py-4  bg-light-lighten border-bottom border-light-lighten ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-lg-12 ">
+                    <div class="text-center ">
+                        <h1 class="mt-0 "><i class="mdi mdi-information-outline "></i></h1>
+                        <h3>Sobre <span class="text-danger ">Nosotros</span></h3>
+                        <!-- <p class="text-muted mt-2 ">Hyper comes with next generation ui design and have multiple benefits
+                        </p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 py-5 align-items-center ">
+                <div class="col-lg-5 ">
+                    <img src="assets/images/features-1.svg " class="img-fluid " alt=" ">
+                </div>
+                <div class="col-lg-6 offset-lg-1 ">
+                    <h3 class="fw-normal ">IBSYSTEMS</h3>
+                    <p class="text-muted mt-3 ">Es una compañía dominicana dedicada a proveer soluciones tecnológicas por medio de la implantación de sistemas, del servicio de análisis, diseño y programación de aplicaciones de negocios, de la exportación, importación y representación
+                        de sistemas y de equipos informáticos de la más alta calidad, así como de la capacitación que aseguran el mejor funcionamiento de los mismos. En IB Systems somos, más que todo, un aliado de negocios que contribuye a lograr el mayor
+                        aprovechamiento de la inversión en tecnología, para que ésta apoye eficientemente las estrategias de negocios que hacen posible la creación de valor para nuestros clientes.
+                    </p>
+
+                    <!-- <div class="mt-4 ">
+                        <p class="text-muted "><i class="mdi mdi-circle-medium text-primary "></i> Projects & Tasks</p>
+                        <p class="text-muted "><i class="mdi mdi-circle-medium text-primary "></i> Ecommerce Application Pages</p>
+                        <p class="text-muted "><i class="mdi mdi-circle-medium text-primary "></i> Profile, pricing, invoice</p>
+                        <p class="text-muted "><i class="mdi mdi-circle-medium text-primary "></i> Login, signup, forget password</p>
+                    </div> -->
+
+                    <a href="#" class="btn btn-primary rounded-pill mt-3 ">Leer Más<i class="mdi mdi-arrow-right ms-1 "></i></a>
+
+                </div>
+            </div>
+
+    </section>
+    <!-- END ABOUT US -->
+
+    <!-- START productos -->
+    <section id="productos" class="py-4 bg-light border-top border-bottom border-light ">
+        <div class="container ">
+            <div class="row py-4 ">
+                <div class="col-lg-12 ">
+                    <div class="text-center ">
+                        <h1 class="mt-0 "><i class="mdi mdi-infinity "></i></h1>
+                        <h3>Nuestros <span class="text-primary ">Productos</span></h3>
+                        <!-- <p class="text-muted mt-2 ">Como empresa, nos esmeramos en brindarles servicios vanguardistas de acuerdo a sus necesidades.
+                        </p> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col-lg-4 ">
+                    <div class="text-center p-3 ">
+                        <div class="avatar-sm m-auto ">
+                            <span class="avatar-title bg-primary-lighten rounded-circle ">
+                                <i class="uil uil-postcard text-primary font-24 "></i>
+                            </span>
+                        </div>
+                        <h4 class="mt-3 ">ITC SYSTEM - PROCESAMIENTO DE TARJETAS CRÉDITO Y DÉBITO</h4>
+                        <p class="text-muted mt-2 mb-0 ">Una solución tecnológica diseñada y desarrollada para brindar una total cobertura operativa al negocio de tarjetas de débito/crédito como Visa, Mastercard, etc. Potenciando aspectos como los de información gerencial y facilidad
+                            de uso. </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 ">
+                    <div class="text-center p-3 ">
+                        <div class="avatar-sm m-auto ">
+                            <span class="avatar-title bg-primary-lighten rounded-circle ">
+                                <i class="uil uil-file-info-alt text-primary font-24 "></i>
+                            </span>
+                        </div>
+                        <h4 class="mt-3 ">ITC SYSTEM - EMBOZADO DE TARJETAS DE CRÉDITO Y DÉBITO</h4>
+                        <p class="text-muted mt-2 mb-0 ">Una herramienta de alta productividad, que facilita al cliente el embozado y seguimiento hasta la entrega de cualquier plástico, permitiendo guardar registros de auditoría de los distintos usuarios y pasos que intervienen en estos
+                            proceso.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 ">
+                    <div class="text-center p-3 ">
+                        <div class="avatar-sm m-auto ">
+                            <span class="avatar-title bg-primary-lighten rounded-circle ">
+                                <i class="uil uil-calculator-alt text-primary font-24 "></i>
+                            </span>
+                        </div>
+                        <h4 class="mt-3 ">ITC SYSTEM - GESTIÓN ADMINISTRATIVA, FINANCIERA Y CONTABLE</h4>
+                        <p class="text-muted mt-2 mb-0 ">Una solución completa, integrada y fácil de usar, que permite a las empresas atender y administrar eficientemente sus recursos. Es un sistema especializado para la gestión administrativa y financiera empresarial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-4 ">
+                        <div class="text-center p-3 ">
+                            <div class="avatar-sm m-auto ">
+                                <span class="avatar-title bg-primary-lighten rounded-circle ">
+                                <i class="uil uil-users-alt text-primary font-24 "></i>
+                            </span>
+                            </div>
+                            <h4 class="mt-3 ">ITC SYSTEM - GESTIÓN HUMANA & DE NÓMINA</h4>
+                            <p class="text-muted mt-2 mb-0 ">Una solución para la gestión humana y de nómina que incluye funcionalidades tales como el manejo de los pagos al personal fijo, temporeral o sub-contratado, salarios, compensaciones, descuentos, impuestos, vacaciones, consultas
+                                y reportes, etc. </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 ">
+                        <div class="text-center p-3 ">
+                            <div class="avatar-sm m-auto ">
+                                <span class="avatar-title bg-primary-lighten rounded-circle ">
+                                <i class="uil uil-phone-alt text-primary font-24 "></i>
+                            </span>
+                            </div>
+                            <h4 class="mt-3 ">ITC SYSTEM - GESTIÓN CALL CENTER COBRANZAS, VENTAS & SERVICIOS</h4>
+                            <p class="text-muted mt-2 mb-0 ">Una solución completa, segura y fácil de usar, que permite a las empresas automatizar su gestión de cobros para reducir la morosidad de su cartera e incrementar su flujo de efectivo. Esta herramienta de cobranzas optimizara
+                                el desarrollo de la empresa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- END productos -->
+
+
+    <!-- START SERVICES -->
+    <section id="servicios" class="py-5 bg-light-lighten border-top border-bottom border-light">
+        <div class="container ">
+            <div class="row py-4 ">
+                <div class="col-lg-12 ">
+                    <div class="text-center ">
+                        <h1 class="mt-0 "><i class="mdi mdi-infinity "></i></h1>
+                        <h3>Nuestros <span class="text-primary ">servicios</span></h3>
+                        <p class="text-muted mt-2 ">Como empresa, nos esmeramos en brindarles servicios vanguardistas de acuerdo a sus necesidades.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col-lg-4 ">
+                    <div class="text-center p-3 ">
+                        <div class="avatar-sm m-auto ">
+                            <span class="avatar-title bg-primary-lighten rounded-circle ">
+                                    <i class="uil uil-code text-primary font-24 "></i>
+                                </span>
+                        </div>
+                        <h4 class="mt-3 ">DESARROLLO E IMPLEMENTACION</h4>
+                        <p class="text-muted mt-2 mb-0 ">Proveemos el desarrollo del software que el cliente solicité, adaptando a sus necesidades, con excelente servicio, así logrando una exitosa implementación.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 ">
+                    <div class="text-center p-3 ">
+                        <div class="avatar-sm m-auto ">
+                            <span class="avatar-title bg-primary-lighten rounded-circle ">
+                                    <i class="uil uil-vector-square text-primary font-24 "></i>
+                                </span>
+                        </div>
+                        <h4 class="mt-3 ">SOFTWARE COMO SERVICIO</h4>
+                        <p class="text-muted mt-2 mb-0 ">Proveemos la habilitacion de su software a ser hosteado en la nube, para así promover el consumo para los clientes de su aplicativo.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 ">
+                    <div class="text-center p-3 ">
+                        <div class="avatar-sm m-auto ">
+                            <span class="avatar-title bg-primary-lighten rounded-circle ">
+                                    <i class="uil uil-presentation text-primary font-24 "></i>
+                                </span>
+                        </div>
+                        <h4 class="mt-3 ">MANTENIMIENTO DE APLICACIONES</h4>
+                        <p class="text-muted mt-2 mb-0 ">Le brindamos servicios para el mantenimiento de sus aplicaciones, fomentando el desarollo, y adaptando su aplicativo a las últimas tecnologías.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col-lg-4 ">
+                    <div class="text-center p-3 ">
+                        <div class="avatar-sm m-auto ">
+                            <span class="avatar-title bg-primary-lighten rounded-circle ">
+                                    <i class="uil uil-apps text-primary font-24 "></i>
+                                </span>
+                        </div>
+                        <h4 class="mt-3 ">LICENCIAMIENTO MICROSOFT</h4>
+                        <p class="text-muted mt-2 mb-0 ">La suite completa de herramientas y soluciones empresariales provistas por Microsoft, tales como la suite de Office y Windows, incluyendo un personal capacitado para su exitosa implementación.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 ">
+                    <div class="text-center p-3 ">
+                        <div class="avatar-sm m-auto ">
+                            <span class="avatar-title bg-primary-lighten rounded-circle ">
+                                    <i class="uil uil-shopping-cart-alt text-primary font-24 "></i>
+                                </span>
+                        </div>
+                        <h4 class="mt-3 ">BUSINESS INTELLIGENCE</h4>
+                        <p class="text-muted mt-2 mb-0 ">Proveemos la más completa, flexible y abierta plataforma tecnológica para Inteligencia de Negocios (BI) a nivel mundial y su correspondiente implementación.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 ">
+                    <div class="text-center p-3 ">
+                        <div class="avatar-sm m-auto ">
+                            <span class="avatar-title bg-primary-lighten rounded-circle ">
+                                    <i class="uil uil-grids text-primary font-24 "></i>
+                                </span>
+                        </div>
+                        <h4 class="mt-3 ">PROTECCIÓN ANTIVIRUS</h4>
+                        <p class="text-muted mt-2 mb-0 ">Proteja su empresa con un sistema de protección Antivirus Empresarial como lo es AVG, el cual poseé alto desempeño, seguridad total y excelente relación costo-efectivo.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
         </div>
-        <!-- END wrapper -->
+    </section>
+    <!-- END SERVICES -->
 
-        @@include('./partials/right-sidebar.html')
+    <!-- START FEATURES 1 -->
+    <!-- <section class="py-5 bg-light-lighten border-top border-bottom border-light ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-lg-12 ">
+                    <div class="text-center ">
+                        <h3>Flexible <span class="text-primary ">Layouts</span></h3>
+                        <p class="text-muted mt-2 ">There are three different layout options available to cater need for any <br /> modern web application.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-        <!-- bundle -->
-        <script src="assets/js/vendor.min.js"></script>
-        <script src="assets/js/app.min.js"></script>
+            <div class="row mt-4 ">
+                <div class="col-lg-4 ">
+                    <div class="demo-box text-center ">
+                        <img src="assets/images/layouts/layout-1.png " alt="demo-img " class="img-fluid shadow-sm rounded ">
+                        <h5 class="mt-3 f-17 ">Vertical Layout</h5>
+                    </div>
+                </div>
 
-        <!-- third party js -->
-        <script src="assets/js/vendor/apexcharts.min.js"></script>
-        <script src="assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
-        <script src="assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
-        <!-- third party js ends -->
+                <div class="col-lg-4 ">
+                    <div class="demo-box text-center mt-3 mt-lg-0 ">
+                        <img src="assets/images/layouts/layout-2.png " alt="demo-img " class="img-fluid shadow-sm rounded ">
+                        <h5 class="mt-3 f-17 ">Horizontal Layout</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4 ">
+                    <div class="demo-box text-center mt-3 mt-lg-0 ">
+                        <img src="assets/images/layouts/layout-3.png " alt="demo-img " class="img-fluid shadow-sm rounded ">
+                        <h5 class="mt-3 f-17 ">Detached Layout</h5>
+                    </div>
+                </div>
+            </div>
 
-        <!-- demo app -->
-        <script src="assets/js/pages/demo.dashboard.js"></script>
-        <!-- end demo js-->
-    </body>
+            <div class="row mt-4 ">
+
+                <div class="col-lg-4 ">
+                    <div class="demo-box text-center ">
+                        <img src="assets/images/layouts/layout-5.png " alt="demo-img " class="img-fluid shadow-sm rounded ">
+                        <h5 class="mt-3 f-17 ">Light Sidenav Layout</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4 ">
+                    <div class="demo-box text-center mt-3 mt-lg-0 ">
+                        <img src="assets/images/layouts/layout-6.png " alt="demo-img " class="img-fluid shadow-sm rounded ">
+                        <h5 class="mt-3 f-17 ">Boxed Layout</h5>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 ">
+                    <div class="demo-box text-center mt-3 mt-lg-0 ">
+                        <img src="assets/images/layouts/layout-4.png " alt="demo-img " class="img-fluid shadow-sm rounded ">
+                        <h5 class="mt-3 f-17 ">Semi Dark Layout</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section> -->
+    <!-- END FEATURES 1 -->
+
+    <!-- START FEATURES 2 -->
+    <!-- <section class="py-5 ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-lg-12 ">
+                    <div class="text-center ">
+                        <h1 class="mt-0 "><i class="mdi mdi-information-outline "></i></h1>
+                        <h3>Sobre <span class="text-danger ">Nosotros</span></h3>
+                        <p class="text-muted mt-2 ">Hyper comes with next generation ui design and have multiple benefits
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 py-5 align-items-center ">
+                <div class="col-lg-5 ">
+                    <img src="assets/images/features-1.svg " class="img-fluid " alt=" ">
+                </div>
+                <div class="col-lg-6 offset-lg-1 ">
+                    <h3 class="fw-normal ">IBSYSTEMS</h3>
+                    <p class="text-muted mt-3 ">Es una compañía dominicana dedicada a proveer soluciones tecnológicas por medio de la implantación de sistemas, del servicio de análisis, diseño y programación de aplicaciones de negocios, de la exportación, importación y representación
+                        de sistemas y de equipos informáticos de la más alta calidad, así como de la capacitación que aseguran el mejor funcionamiento de los mismos. En IB Systems somos, más que todo, un aliado de negocios que contribuye a lograr el mayor
+                        aprovechamiento de la inversión en tecnología, para que ésta apoye eficientemente las estrategias de negocios que hacen posible la creación de valor para nuestros clientes.
+                    </p>
+
+                    <div class="mt-4 ">
+                        <p class="text-muted "><i class="mdi mdi-circle-medium text-primary "></i> Projects & Tasks</p>
+                        <p class="text-muted "><i class="mdi mdi-circle-medium text-primary "></i> Ecommerce Application Pages</p>
+                        <p class="text-muted "><i class="mdi mdi-circle-medium text-primary "></i> Profile, pricing, invoice</p>
+                        <p class="text-muted "><i class="mdi mdi-circle-medium text-primary "></i> Login, signup, forget password</p>
+                    </div>
+
+                    <a href="#" class="btn btn-primary rounded-pill mt-3 ">Leer Más<i class="mdi mdi-arrow-right ms-1 "></i></a>
+
+                </div>
+            </div>
+
+            <div class="row pb-3 pt-5 align-items-center ">
+                <div class="col-lg-6 ">
+                    <h3 class="fw-normal ">Simply beautiful design</h3>
+                    <p class="text-muted mt-3 ">The simplest and fastest way to build dashboard or admin panel. Hyper is built using the latest tech and tools and provide an easy way to customize anything, including an overall color schemes, layout, etc.</p>
+
+                    <div class="mt-4 ">
+                        <p class="text-muted "><i class="mdi mdi-circle-medium text-success "></i> Built with latest Bootstrap</p>
+                        <p class="text-muted "><i class="mdi mdi-circle-medium text-success "></i> Extensive use of SCSS variables</p>
+                        <p class="text-muted "><i class="mdi mdi-circle-medium text-success "></i> Well documented and structured code</p>
+                        <p class="text-muted "><i class="mdi mdi-circle-medium text-success "></i> Detailed Documentation</p>
+                    </div>
+
+                    <a href=" " class="btn btn-success rounded-pill mt-3 ">Read More <i class="mdi mdi-arrow-right ms-1 "></i></a>
+
+                </div>
+                <div class="col-lg-5 offset-lg-1 ">
+                    <img src="assets/images/features-2.svg " class="img-fluid " alt=" ">
+                </div>
+            </div>
+
+        </div>
+    </section> -->
+    <!-- END FEATURES 2 -->
+
+    <!-- START PRICING -->
+    <!-- <section class="py-5 bg-light-lighten border-top border-bottom border-light ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-lg-12 ">
+                    <div class="text-center ">
+                        <h1 class="mt-0 "><i class="mdi mdi-tag-multiple "></i></h1>
+                        <h3>Choose Simple <span class="text-primary ">Pricing</span></h3>
+                        <p class="text-muted mt-2 ">The clean and well commented code allows easy customization of the theme.It's designed for
+                            <br>describing your app, agency or business.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-3 ">
+                <div class="col-md-4 ">
+                    <div class="card card-pricing ">
+                        <div class="card-body text-center ">
+                            <p class="card-pricing-plan-name fw-bold text-uppercase ">Standard License </p>
+                            <i class="card-pricing-icon dripicons-user text-primary "></i>
+                            <h2 class="card-pricing-price ">$49 <span>/ License</span></h2>
+                            <ul class="card-pricing-features ">
+                                <li>10 GB Storage</li>
+                                <li>500 GB Bandwidth</li>
+                                <li>No Domain</li>
+                                <li>1 User</li>
+                                <li>Email Support</li>
+                                <li>24x7 Support</li>
+                            </ul>
+                            <button class="btn btn-primary mt-4 mb-2 rounded-pill ">Choose Plan</button>
+                        </div>
+                    </div> -->
+    <!-- end Pricing_card -->
+    <!-- </div> -->
+    <!-- end col -->
+
+    <!-- <div class="col-md-4 ">
+                    <div class="card card-pricing card-pricing-recommended ">
+                        <div class="card-body text-center ">
+                            <div class="card-pricing-plan-tag ">Recommended</div>
+                            <p class="card-pricing-plan-name fw-bold text-uppercase ">Multiple License</p>
+                            <i class="card-pricing-icon dripicons-briefcase text-primary "></i>
+                            <h2 class="card-pricing-price ">$99 <span>/ License</span></h2>
+                            <ul class="card-pricing-features ">
+                                <li>50 GB Storage</li>
+                                <li>900 GB Bandwidth</li>
+                                <li>2 Domain</li>
+                                <li>10 User</li>
+                                <li>Email Support</li>
+                                <li>24x7 Support</li>
+                            </ul>
+                            <button class="btn btn-primary mt-4 mb-2 rounded-pill ">Choose Plan</button>
+                        </div>
+                    </div> -->
+    <!-- end Pricing_card -->
+    <!-- </div> -->
+    <!-- end col -->
+
+    <!-- <div class="col-md-4 ">
+                    <div class="card card-pricing ">
+                        <div class="card-body text-center ">
+                            <p class="card-pricing-plan-name fw-bold text-uppercase ">Extended License</p>
+                            <i class="card-pricing-icon dripicons-store text-primary "></i>
+                            <h2 class="card-pricing-price ">$599 <span>/ License</span></h2>
+                            <ul class="card-pricing-features ">
+                                <li>100 GB Storege</li>
+                                <li>Unlimited Bandwidth</li>
+                                <li>10 Domain</li>
+                                <li>Unlimited User</li>
+                                <li>Email Support</li>
+                                <li>24x7 Support</li>
+                            </ul>
+                            <button class="btn btn-primary mt-4 mb-2 rounded-pill ">Choose Plan</button>
+                        </div>
+                    </div> -->
+    <!-- end Pricing_card -->
+    <!-- </div> -->
+    <!-- end col -->
+    <!-- 
+            </div>
+
+        </div>
+    </section> -->
+    <!-- END PRICING -->
+
+    <!-- START FAQ -->
+    <section class="py-5 bg-light border-top border-bottom border-light-lighten">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-lg-12 ">
+                    <div class="text-center ">
+                        <h1 class="mt-0 "><i class="mdi mdi-frequently-asked-questions "></i></h1>
+                        <h3>Frequently Asked <span class="text-primary ">Questions</span></h3>
+                        <p class="text-muted mt-2 ">Here are some of the basic types of questions for our customers. For more
+                            <br>information please contact us.</p>
+
+                        <button type="button " class="btn btn-success btn-sm mt-2 "><i class="mdi mdi-email-outline me-1 "></i> Email us your question</button>
+                        <button type="button " class="btn btn-info btn-sm mt-2 ms-1 "><i class="mdi mdi-twitter me-1 "></i> Send us a tweet</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 ">
+                <div class="col-lg-5 offset-lg-1 ">
+                    <!-- Question/Answer -->
+                    <div>
+                        <div class="faq-question-q-box ">Q.</div>
+                        <h4 class="faq-question text-body ">Can I use this template for my client?</h4>
+                        <p class="faq-answer mb-4 pb-1 text-muted ">Yup, the marketplace license allows you to use this theme in any end products. For more information on licenses, please refere <a href="https://themes.getbootstrap.com/licenses/
+                            " target="_blank ">here</a>.</p>
+                    </div>
+
+                    <!-- Question/Answer -->
+                    <div>
+                        <div class="faq-question-q-box ">Q.</div>
+                        <h4 class="faq-question text-body ">How do I get help with the theme?</h4>
+                        <p class="faq-answer mb-4 pb-1 text-muted ">Use our dedicated support email (support@coderthemes.com) to send your issues or feedback. We are here to help anytime.</p>
+                    </div>
+
+                </div>
+                <!--/col-lg-5 -->
+
+                <div class="col-lg-5 ">
+                    <!-- Question/Answer -->
+                    <div>
+                        <div class="faq-question-q-box ">Q.</div>
+                        <h4 class="faq-question text-body ">Can this theme work with Wordpress?</h4>
+                        <p class="faq-answer mb-4 pb-1 text-muted ">No. This is a HTML template. It won't directly with wordpress, though you can convert this into wordpress compatible theme.</p>
+                    </div>
+
+                    <!-- Question/Answer -->
+                    <div>
+                        <div class="faq-question-q-box ">Q.</div>
+                        <h4 class="faq-question text-body ">Will you regularly give updates of Hyper?</h4>
+                        <p class="faq-answer mb-4 pb-1 text-muted ">Yes, We will update the Hyper regularly. All the future updates would be available without any cost.</p>
+                    </div>
+
+                </div>
+                <!--/col-lg-5-->
+            </div>
+            <!-- end row -->
+
+        </div>
+        <!-- end container-->
+    </section>
+    <!-- END FAQ -->
+
+
+    <!-- START CONTACT -->
+    <section id="contact" class="py-5  border-top border-bottom border-light ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-lg-12 ">
+                    <div class="text-center ">
+                        <h3>Contacta con nosotros en un solo <span class="text-primary ">Click</span></h3>
+                        <p class="text-muted mt-2 ">
+                            Por favor, rellene el siguiente formulario y nos pondremos en contacto con usted en breve. Para mas
+                            <br>informacion Porfavor Contactarnos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center mt-3 ">
+                <div class="col-md-4 ">
+                    <p class="text-muted "><span class="fw-bold ">Atencion al cliente:</span><br> <a href="tel:+1 809-227-7139" class="d-block mt-1 ">+1 809-227-7139</a></p>
+                    <p class="text-muted mt-4 "><span class="fw-bold ">Email :</span><br> <a href="mailto:soporte@ibsystems.com.do" class="d-block mt-1 ">soporte@ibsystems.com.do</a></p>
+                    <p class="text-muted mt-4 "><span class="fw-bold ">Direccion:</span><br> <span class="d-block mt-1 ">4461 Cedar Street Moro, AR 72368</span></p>
+                    <p class="text-muted mt-4 "><span class="fw-bold ">Horario:</span><br> <span class="d-block mt-1 ">9:00AM To 6:00PM</span></p>
+                </div>
+
+                <div class="col-md-8 ">
+                    <form>
+                        <div class="row mt-4 ">
+                            <div class="col-lg-6 ">
+                                <div class="mb-2 ">
+                                    <label for="fullname " class="form-label ">Nombre</label>
+                                    <input class="form-control form-control-light " type="text " id="fullname " placeholder="Nombre... ">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 ">
+                                <div class="mb-2 ">
+                                    <label for="emailaddress " class="form-label ">Email</label>
+                                    <input class="form-control form-control-light " type="email " required=" " id="emailaddress " placeholder="Escribe tu email... ">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-1 ">
+                            <div class="col-lg-12 ">
+                                <div class="mb-2 ">
+                                    <label for="subject " class="form-label ">Sujeto</label>
+                                    <input class="form-control form-control-light " type="text " id="subject " placeholder="Enter subject... ">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-1 ">
+                            <div class="col-lg-12 ">
+                                <div class="mb-2 ">
+                                    <label for="comments " class="form-label ">Mensaje</label>
+                                    <textarea id="comments " rows="4 " class="form-control form-control-light " placeholder="Type your message here... "></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-2 ">
+                            <div class="col-12 text-end ">
+                                <button class="btn btn-primary ">Enviar Mensaje <i class="mdi mdi-telegram ms-1 "></i> </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END CONTACT -->
+
+    <!-- START FOOTER -->
+    <footer class="bg-light py-5 ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-lg-6 ">
+                    <img src="assets/images/logo-light.png " alt=" " class="logo-dark " height="35 " />
+                    <p class="text-muted mt-4 ">Hyper makes it easier to build better websites with
+                        <br> great speed. Save hundreds of hours of design
+                        <br> and development by using it.</p>
+
+                    <ul class="social-list list-inline mt-3 ">
+                        <li class="list-inline-item text-center ">
+                            <a href="javascript: void(0); " class="social-list-item border-primary text-primary "><i class="mdi mdi-facebook "></i></a>
+                        </li>
+                        <li class="list-inline-item text-center ">
+                            <a href="javascript: void(0); " class="social-list-item border-danger text-danger "><i class="mdi mdi-google "></i></a>
+                        </li>
+                        <li class="list-inline-item text-center ">
+                            <a href="javascript: void(0); " class="social-list-item border-info text-info "><i class="mdi mdi-twitter "></i></a>
+                        </li>
+                        <li class="list-inline-item text-center ">
+                            <a href="javascript: void(0); " class="social-list-item border-secondary text-secondary "><i class="mdi mdi-github "></i></a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-2 mt-3 mt-lg-0 ">
+                    <h5 class="text-dark ">Company</h5>
+
+                    <ul class="list-unstyled ps-0 mb-0 mt-3 ">
+                        <li class="mt-2 "><a href="javascript: void(0); " class="text-muted ">About Us</a></li>
+                        <li class="mt-2 "><a href="javascript: void(0); " class="text-muted ">Documentation</a></li>
+                        <li class="mt-2 "><a href="javascript: void(0); " class="text-muted ">Blog</a></li>
+                        <li class="mt-2 "><a href="javascript: void(0); " class="text-muted ">Affiliate Program</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-2 mt-3 mt-lg-0 ">
+                    <h5 class="text-dark ">Apps</h5>
+
+                    <ul class="list-unstyled ps-0 mb-0 mt-3 ">
+                        <li class="mt-2 "><a href="javascript: void(0); " class="text-muted ">Ecommerce Pages</a></li>
+                        <li class="mt-2 "><a href="javascript: void(0); " class="text-muted ">Email</a></li>
+                        <li class="mt-2 "><a href="javascript: void(0); " class="text-muted ">Social Feed</a></li>
+                        <li class="mt-2 "><a href="javascript: void(0); " class="text-muted ">Projects</a></li>
+                        <li class="mt-2 "><a href="javascript: void(0); " class="text-muted ">Tasks Management</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 mt-3 mt-lg-0 ">
+                    <h5 class="text-dark ">Discover</h5>
+
+                    <ul class="list-unstyled ps-0 mb-0 mt-3 ">
+                        <li class="mt-2 "><a href="javascript: void(0); " class="text-muted ">Help Center</a></li>
+                        <li class="mt-2 "><a href="javascript: void(0); " class="text-muted ">Our Products</a></li>
+                        <li class="mt-2 "><a href="javascript: void(0); " class="text-muted ">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col-lg-12 ">
+                    <div class="mt-5 ">
+                        <p class="text-muted mt-4 text-center mb-0 ">© 2018 - 2021 cons360. Design and coded by IBSYSTEMS.SRL
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <!-- bundle -->
+    <script src="assets/js/vendor.min.js "></script>
+    <script src="assets/js/app.min.js "></script>
+
+</body>
+<<<<<<< HEAD
+<!-- Start of ChatBot (www.chatbot.com) code -->
+<script type="text/javascript">
+    window.__be = window.__be || {};
+    window.__be.id = "63c517046b6e4300071b6596";
+    (function() {
+        var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+        be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+    })();
+</script>
+<!-- End of ChatBot code -->
+=======
+
+>>>>>>> a5b51c0b5c5d9bfcf13372c94a34a365925cee40
 </html>
